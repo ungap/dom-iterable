@@ -1,6 +1,6 @@
 {
   "name": "@ungap/dom-iterable",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Ensuring common iterable DOM classes can be used in for/of loops.",
   "main": "cjs/index.js",
   "module": "esm/index.js",
