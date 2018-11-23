@@ -1,0 +1,40 @@
+{
+  "name": "@ungap/dom-iterable",
+  "version": "0.0.0",
+  "description": "Ensuring common iterable DOM classes can be used in for/of loops.",
+  "main": "cjs/index.js",
+  "module": "esm/index.js",
+  "unpkg": "min.js",
+  "scripts": {
+    "build": "npm run cjs && npm run esm && npm run min && npm run test && npm run size",
+    "cjs": "cp index.js cjs/",
+    "esm": "cp index.js esm/",
+    "min": "uglifyjs index.js --support-ie8 --comments=/^!/ -c -m -o min.js",
+    "size": "cat index.js | wc -c && cat min.js | wc -c && gzip -c9 min.js | wc -c && cat min.js | brotli | wc -c",
+    "coveralls": "cat ./coverage/lcov.info | coveralls",
+    "test": "istanbul cover test/index.js"
+  },
+  "keywords": [
+    "DOM",
+    "NodeList",
+    "for/of",
+    "iterator",
+    "polyfill",
+    "ungap"
+  ],
+  "author": "Andrea Giammarchi",
+  "license": "ISC",
+  "devDependencies": {
+    "coveralls": "^3.0.2",
+    "istanbul": "^0.4.5",
+    "uglify-js": "^2.8.29"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ungap/dom-iterable.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ungap/dom-iterable/issues"
+  },
+  "homepage": "https://github.com/ungap/dom-iterable#readme"
+}
